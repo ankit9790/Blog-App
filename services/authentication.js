@@ -1,8 +1,9 @@
-const JWT = require('jsonwebtoken');
+require("dotenv").config();
+const JWT = require("jsonwebtoken");
 
-const secret = "$superBSDK@420";
+const secret = process.env.secret;
 
-function createTokenForUser(user){
+function createTokenForUser(user) {
   const payload = {
     _id: user._id,
     email: user.email,
@@ -14,7 +15,7 @@ function createTokenForUser(user){
   return token;
 }
 
-function validateToken(token){
+function validateToken(token) {
   const payload = JWT.verify(token, secret);
   return payload;
 }
