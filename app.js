@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
 require("dotenv").config();
 
-const Blog = require("./models/Blog");
+const Blog = require("./models/blog");
 
 const userRouter = require("./routes/userRoute");
 const blogRouter = require("./routes/blogRoute");
